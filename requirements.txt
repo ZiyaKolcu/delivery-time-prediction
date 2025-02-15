@@ -4,3 +4,6 @@ ensure
 joblib
 types-PyYAML
 python-dotenv
+pandas
+psycopg2
+ipykernel
