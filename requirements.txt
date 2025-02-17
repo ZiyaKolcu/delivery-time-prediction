@@ -7,3 +7,7 @@ python-dotenv
 pandas
 psycopg2
 ipykernel
+matplotlib
+seaborn
+scikit-learn
+holidays
