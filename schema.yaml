@@ -1,1 +1,20 @@
-temp_key: temp_value
+COLUMNS:
+  market_id: float
+  created_at: str
+  actual_delivery_time: str
+  store_id: int
+  store_primary_category: str
+  order_protocol: float
+  total_items: int
+  subtotal: int
+  num_distinct_items: int
+  min_item_price: int
+  max_item_price: int
+  total_onshift_dashers: float
+  total_busy_dashers: float
+  total_outstanding_orders: float
+  estimated_order_place_duration: int
+  estimated_store_to_consumer_driving_duration: float
+
+TARGET_COLUMN:
+  name: delivery_duration_minutes

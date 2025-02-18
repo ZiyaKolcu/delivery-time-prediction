@@ -2,6 +2,9 @@ from DeliveryTimePrediction.logging.logger import logging
 from DeliveryTimePrediction.pipeline.data_ingestion_pipeline import (
     DataIngestionTrainingPipeline,
 )
+from DeliveryTimePrediction.pipeline.data_validation_pipeline import (
+    DataValidationTrainingPipeline,
+)
 
 STAGE_NAME = "Data Ingestion Stage"
 
@@ -14,3 +17,14 @@ if __name__ == "__main__":
     except Exception as e:
         logging.exception(e)
         raise e
+
+
+STAGE_NAME = "Data Validation Stage"
+try:
+    logging.info(f">>>>> {STAGE_NAME} started <<<<<")
+    data_validation = DataValidationTrainingPipeline()
+    data_validation.initiate_data_validation()
+    logging.info(f">>>>> {STAGE_NAME} completed <<<<<")
+except Exception as e:
+    logging.exception(e)
+    raise e

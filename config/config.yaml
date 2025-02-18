@@ -3,3 +3,8 @@ artifacts_root: Artifacts
 data_ingestion:
   root_dir: Artifacts/data_ingestion
   local_data_dir: Artifacts/data_ingestion
+
+data_validation:
+  root_dir: artifacts/data_validation
+  local_data_dir: artifacts/data_ingestion/data.csv
+  STATUS_FILE: artifacts/data_validation/status.txt
