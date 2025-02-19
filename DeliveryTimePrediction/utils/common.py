@@ -94,7 +94,6 @@ def save_bin(data, file_path):
     logging.info(f"binary file saved at: {file_path}")
 
 
-@ensure_annotations
 def load_bin(path: Path) -> Any:
     """load binary data
 

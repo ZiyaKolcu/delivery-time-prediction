@@ -1,1 +1,5 @@
-temp_key: temp_value
+ElasticNet:
+  alpha: 0.01
+  l1_ratio: 0.1
+  max_iter: 500
+  tol: 0.01
