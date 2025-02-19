@@ -80,16 +80,18 @@ def load_json(path: Path) -> ConfigBox:
     return ConfigBox(content)
 
 
-@ensure_annotations
-def save_bin(data: Any, path: Path):
+def save_bin(data, file_path):
     """save binary file
 
     Args:
         data (Any): data to be saved as binary
         path (Path): path to binary file
     """
-    joblib.dump(value=data, filename=path)
-    logging.info(f"binary file saved at: {path}")
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    with open(file_path, "wb") as file_obj:
+        joblib.dump(data, file_obj)
+
+    logging.info(f"binary file saved at: {file_path}")
 
 
 @ensure_annotations
