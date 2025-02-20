@@ -11,6 +11,9 @@ from DeliveryTimePrediction.pipeline.data_transformation_pipeline import (
 from DeliveryTimePrediction.pipeline.model_trainer_pipeline import (
     ModelTrainerTrainingPipeline,
 )
+from DeliveryTimePrediction.pipeline.model_evaluation_pipeline import (
+    ModelEvaluationTrainingPipeline,
+)
 
 STAGE_NAME = "Data Ingestion Stage"
 
@@ -54,6 +57,19 @@ try:
     model_trainer = ModelTrainerTrainingPipeline()
     model_trainer.initiate_model_trainer()
     logging.info(f">>>>> {STAGE_NAME} completed <<<<<")
+except Exception as e:
+    logging.exception(e)
+    raise e
+
+
+STAGE_NAME = "Model Evaluation Stage"
+
+try:
+    logging.info(f">>>>> {STAGE_NAME} started <<<<<")
+    data_ingestion = ModelEvaluationTrainingPipeline()
+    data_ingestion.initiate_model_evaluation()
+    logging.info(f">>>>> {STAGE_NAME} completed <<<<<")
+
 except Exception as e:
     logging.exception(e)
     raise e
