@@ -7,6 +7,7 @@ from DeliveryTimePrediction.entity.config_entity import (
     DataTransformationConfig,
     ModelTrainerConfig,
     ModelEvaluationConfig,
+    ModelPredictionConfig,
 )
 
 
@@ -92,3 +93,16 @@ class ConfigurationManager:
             mlflow_uri=os.getenv("MLFLOW_TRACKING_URI"),
         )
         return model_evaluation_config
+
+    def get_model_prediction_config(self) -> ModelPredictionConfig:
+        config = self.config.model_prediction
+
+        create_directories([config.root_dir])
+
+        model_prediction_config = ModelPredictionConfig(
+            root_dir=config.root_dir,
+            model_path=config.model_path,
+            prediction_file_path=config.prediction_file_path,
+        )
+
+        return model_prediction_config
