@@ -25,7 +25,7 @@ class ModelPrediction:
 
         model = load_bin(path=self.config.model_path)
         prediction = model.predict(df)
-        pred_dict = {"Prediction": prediction[0]}
+        # pred_dict = {"Prediction": prediction[0]}
 
-        save_json(path=self.config.prediction_file_path, data=pred_dict)
+        # save_json(path=self.config.prediction_file_path, data=pred_dict)
         return prediction[0]
